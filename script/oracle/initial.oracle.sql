@@ -9,7 +9,7 @@ prompt
 create table CONSOLE_DASHBOARDS
 (
   dashboardid   VARCHAR2(60) not null,
-  name          VARCHAR2(25),
+  name          VARCHAR2(50),
   reports       CLOB,
   paragraphs    CLOB,
   lastvisittime VARCHAR2(25),
@@ -34,7 +34,7 @@ prompt
 create table CONSOLE_SPACES
 (
   spaceid       VARCHAR2(60) not null,
-  name          VARCHAR2(25),
+  name          VARCHAR2(50),
   connectid     VARCHAR2(60),
   type          VARCHAR2(10),
   lastvisittime DATE,
@@ -49,7 +49,7 @@ create table CONSOLE_SPACES
 )
 ;
 alter table CONSOLE_SPACES
-  add constraint CONSOLE_SPACES_PK primary key (SPACEID);
+  add constraint CONSOLE_SPACES_PK primary key (connectid);
 alter table CONSOLE_SPACES
   add constraint CONSOLE_SPACES_GROUPIDS_JSON
   check (groupids IS JSON);
@@ -143,7 +143,7 @@ create table CONSOLE_SPACE_SUBJECTS
   dataset        CLOB,
   lastvisittime  DATE,
   createdat      VARCHAR2(50),
-  last_modified  DATE,
+  lastmodified  DATE,
   lastmodifytime DATE,
   createtime     VARCHAR2(50)
 )
@@ -180,7 +180,7 @@ create table PIPELINES
 (
   pipelineid    VARCHAR2(60) not null,
   topicid       VARCHAR2(60) not null,
-  name          VARCHAR2(25) not null,
+  name          VARCHAR2(50) not null,
   type          VARCHAR2(20),
   stages        CLOB,
   conditional   VARCHAR2(5),
@@ -248,8 +248,8 @@ create table SPACES
   spaceid       VARCHAR2(60) not null,
   topicids      CLOB,
   groupids      CLOB,
-  name          VARCHAR2(25),
-  description   VARCHAR2(25),
+  name          VARCHAR2(50),
+  description   VARCHAR2(50),
   createtime    VARCHAR2(50),
   last_modified DATE,
   lastmodified  DATE
@@ -271,7 +271,7 @@ prompt
 create table TOPICS
 (
   topicid       VARCHAR2(60) not null,
-  name          VARCHAR2(40) not null,
+  name          VARCHAR2(50) not null,
   kind          VARCHAR2(10),
   type          VARCHAR2(10),
   description   VARCHAR2(50),
@@ -317,8 +317,8 @@ prompt
 create table USER_GROUPS
 (
   usergroupid  VARCHAR2(60) not null,
-  name         VARCHAR2(45) not null,
-  description  VARCHAR2(45),
+  name         VARCHAR2(50) not null,
+  description  VARCHAR2(50),
   userids      CLOB,
   spaceids     CLOB,
   createtime   VARCHAR2(50),

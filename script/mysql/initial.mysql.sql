@@ -1,6 +1,6 @@
 CREATE TABLE CONSOLE_DASHBOARDS (
   dashboardid varchar(60) NOT NULL,
-  name varchar(25) DEFAULT NULL,
+  name varchar(50) DEFAULT NULL,
   reports json DEFAULT NULL,
   paragraphs json DEFAULT NULL,
   lastvisittime varchar(25) DEFAULT NULL,
@@ -13,10 +13,10 @@ CREATE TABLE CONSOLE_DASHBOARDS (
 CREATE TABLE CONSOLE_SPACES
 (
   spaceid       varchar(60) NOT NULL,
-  name          varchar(25) DEFAULT NULL,
-  connectid     varchar(60) DEFAULT NULL,
+  name          varchar(50) DEFAULT NULL,
+  connectid     varchar(60) NOT NULL,
   type          varchar(10) DEFAULT NULL,
-  lastvisittime date DEFAULT NULL,
+  lastvisittime datetime DEFAULT NULL,
   subjects      json DEFAULT NULL,
   groupids      json DEFAULT NULL,
   subjectids    json DEFAULT NULL,
@@ -24,8 +24,7 @@ CREATE TABLE CONSOLE_SPACES
   topics        json DEFAULT NULL,
   createtime    varchar(50) DEFAULT NULL,
   lastmodified  datetime DEFAULT NULL,
-  last_modified datetime DEFAULT NULL,
-  PRIMARY KEY (`spaceid`)
+  PRIMARY KEY (`connectid`)
 );
 
 CREATE TABLE CONSOLE_SPACE_FAVORITES
@@ -66,7 +65,7 @@ CREATE TABLE CONSOLE_SPACE_LAST_SNAPSHOT
 CREATE TABLE CONSOLE_SPACE_SUBJECTS
 (
   subjectid      varchar(60) NOT NULL,
-  name           varchar(50) NOT NULL,
+  name           varchar(80) NOT NULL,
   topiccount     integer DEFAULT NULL,
   graphicscount  integer DEFAULT NULL,
   reports        json DEFAULT NULL,
@@ -83,7 +82,7 @@ CREATE TABLE CONSOLE_SPACE_SUBJECTS
 CREATE TABLE ENUMS
 (
   enumid       varchar(60) NOT NULL,
-  name         varchar(25) NOT NULL,
+  name         varchar(50) NOT NULL,
   description  varchar(25) DEFAULT NULL,
   parentenumid varchar(60) DEFAULT NULL,
   items        json DEFAULT NULL,
@@ -96,7 +95,7 @@ CREATE TABLE PIPELINES
 (
   pipelineid    varchar(60) NOT NULL,
   topicid       varchar(60) NOT NULL,
-  name          varchar(25) NOT NULL,
+  name          varchar(50) NOT NULL,
   type          varchar(20) DEFAULT NULL,
   stages        json DEFAULT NULL,
   conditional   varchar(5) DEFAULT NULL,
@@ -124,8 +123,8 @@ CREATE TABLE SPACES
   spaceid       varchar(60) NOT NULL,
   topicids      json DEFAULT NULL,
   groupids      json DEFAULT NULL,
-  name          varchar(25) DEFAULT NULL,
-  description   varchar(25) DEFAULT NULL,
+  name          varchar(50) DEFAULT NULL,
+  description   varchar(50) DEFAULT NULL,
   createtime    varchar(50) DEFAULT NULL,
   last_modified datetime DEFAULT NULL,
   lastmodified  datetime DEFAULT NULL,
@@ -135,7 +134,7 @@ CREATE TABLE SPACES
 CREATE TABLE TOPICS
 (
   topicid       varchar(60) NOT NULL,
-  name          varchar(40) NOT NULL,
+  name          varchar(50) NOT NULL,
   kind          varchar(10) DEFAULT NULL,
   type          varchar(10) DEFAULT NULL,
   description   varchar(50) DEFAULT NULL,
@@ -149,7 +148,7 @@ CREATE TABLE TOPICS
 CREATE TABLE USERS
 (
   userid       varchar(60) NOT NULL,
-  name         varchar(45) DEFAULT NULL,
+  name         varchar(50) DEFAULT NULL,
   nickname     varchar(45) DEFAULT NULL,
   password     varchar(100) DEFAULT NULL,
   is_active    varchar(5) DEFAULT NULL,
@@ -163,7 +162,7 @@ CREATE TABLE USERS
 CREATE TABLE USER_GROUPS
 (
   usergroupid  varchar(60) NOT NULL,
-  name         varchar(45) NOT NULL,
+  name         varchar(50) NOT NULL,
   description  varchar(45) DEFAULT NULL,
   userids      json DEFAULT NULL,
   spaceids     json DEFAULT NULL,
