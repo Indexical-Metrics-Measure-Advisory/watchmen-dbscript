@@ -7,6 +7,7 @@ CREATE TABLE CONSOLE_DASHBOARDS (
   userid varchar(60) DEFAULT NULL,
   createtime varchar(25) DEFAULT NULL,
   lastmodified datetime DEFAULT NULL,
+  tenantid varchar(50) NOT NULL,
   PRIMARY KEY (`dashboardid`)
 );
 
@@ -22,6 +23,7 @@ CREATE TABLE CONSOLE_SPACES
   subjectids    json DEFAULT NULL,
   userid        varchar(60) DEFAULT NULL,
   topics        json DEFAULT NULL,
+  tenantid      varchar(50) NOT NULL,
   createtime    varchar(50) DEFAULT NULL,
   lastmodified  datetime DEFAULT NULL,
   PRIMARY KEY (`connectid`)
@@ -33,8 +35,9 @@ CREATE TABLE CONSOLE_SPACE_FAVORITES
   connectedspaceids json DEFAULT NULL,
   dashboardids      json DEFAULT NULL,
   createtime        varchar(50) DEFAULT NULL,
-  last_modified     datetime DEFAULT NULL,
+--  last_modified     datetime DEFAULT NULL,
   lastmodified      datetime DEFAULT NULL,
+  tenantid      varchar(50) NOT NULL,
   PRIMARY KEY (`userid`)
 );
 
@@ -46,7 +49,8 @@ CREATE TABLE CONSOLE_SPACE_GRAPH
   subjects      json DEFAULT NULL,
   createtime    varchar(25) DEFAULT NULL,
   lastmodified  datetime DEFAULT NULL,
-  last_modified datetime DEFAULT NULL,
+  tenantid      varchar(50) NOT NULL,
+--  last_modified datetime DEFAULT NULL,
   PRIMARY KEY (`connectid`)
 );
 
@@ -57,6 +61,7 @@ CREATE TABLE CONSOLE_SPACE_LAST_SNAPSHOT
   lastdashboardid  varchar(25) DEFAULT NULL,
   admindashboardid varchar(25) DEFAULT NULL,
   favoritepin      varchar(5) DEFAULT NULL,
+  tenantid      varchar(50) NOT NULL,
   createtime       varchar(50) DEFAULT NULL,
   lastmodified     datetime DEFAULT NULL,
   PRIMARY KEY (`userid`)
@@ -73,8 +78,9 @@ CREATE TABLE CONSOLE_SPACE_SUBJECTS
   dataset        json DEFAULT NULL,
   lastvisittime  datetime DEFAULT NULL,
   createdat      varchar(50) DEFAULT NULL,
-  last_modified  datetime DEFAULT NULL,
-  lastmodifytime datetime DEFAULT NULL,
+--  last_modified  datetime DEFAULT NULL,
+  lastmodified datetime DEFAULT NULL,
+  tenantid      varchar(50) NOT NULL,
   createtime     varchar(50) DEFAULT NULL,
   PRIMARY KEY (`subjectid`)
 );
@@ -87,6 +93,7 @@ CREATE TABLE ENUMS
   parentenumid varchar(60) DEFAULT NULL,
   items        json DEFAULT NULL,
   createtime   varchar(50) DEFAULT NULL,
+  tenantid      varchar(50) NOT NULL,
   lastmodified datetime DEFAULT NULL,
   PRIMARY KEY (`enumid`)
 );
@@ -102,8 +109,9 @@ CREATE TABLE PIPELINES
   enabled       varchar(5) DEFAULT NULL,
   `on`            json DEFAULT NULL,
   createtime    varchar(25) DEFAULT NULL,
-  last_modified datetime DEFAULT NULL,
+--  last_modified datetime DEFAULT NULL,
   lastmodified  datetime DEFAULT NULL,
+  tenantid      varchar(50) NOT NULL,
   PRIMARY KEY (`pipelineid`)
 );
 
@@ -115,6 +123,7 @@ CREATE TABLE PIPELINE_GRAPH
   topics       json DEFAULT NULL,
   lastmodified datetime DEFAULT NULL,
   createtime   varchar(25) DEFAULT NULL,
+  tenantid      varchar(50) NOT NULL,
   PRIMARY KEY (`pipelinegraphid`)
 );
 
@@ -126,8 +135,8 @@ CREATE TABLE SPACES
   name          varchar(50) DEFAULT NULL,
   description   varchar(50) DEFAULT NULL,
   createtime    varchar(50) DEFAULT NULL,
-  last_modified datetime DEFAULT NULL,
   lastmodified  datetime DEFAULT NULL,
+  tenantid varchar(50) NOT NULL,
   PRIMARY KEY (`spaceid`)
 );
 
@@ -140,7 +149,8 @@ CREATE TABLE TOPICS
   description   varchar(50) DEFAULT NULL,
   factors       json DEFAULT NULL,
   createtime    varchar(50) DEFAULT NULL,
-  last_modified datetime DEFAULT NULL,
+--  last_modified datetime DEFAULT NULL,
+  tenantid      varchar(50) NOT NULL,
   lastmodified  datetime DEFAULT NULL,
   PRIMARY KEY (`topicid`)
 );
@@ -155,20 +165,31 @@ CREATE TABLE USERS
   role         varchar(45) DEFAULT NULL,
   createtime   varchar(50) DEFAULT NULL,
   lastmodified datetime DEFAULT NULL,
+  tenantid      varchar(50) NOT NULL,
   groupids     json DEFAULT NULL,
   PRIMARY KEY (`userid`)
 );
 
 CREATE TABLE USER_GROUPS
 (
-  usergroupid  varchar(60) NOT NULL,
+    usergroupid  varchar(60) NOT NULL,
+    name         varchar(50) NOT NULL,
+    description  varchar(45) DEFAULT NULL,
+    userids      json        DEFAULT NULL,
+    spaceids     json        DEFAULT NULL,
+    createtime   varchar(50) DEFAULT NULL,
+    tenantid     varchar(50) NOT NULL,
+    lastmodified datetime    DEFAULT NULL,
+    PRIMARY KEY (`usergroupid`)
+);
+
+create table TENANTS
+(
+  tenantid     varchar(60) NOT NULL,
   name         varchar(50) NOT NULL,
-  description  varchar(45) DEFAULT NULL,
-  userids      json DEFAULT NULL,
-  spaceids     json DEFAULT NULL,
   createtime   varchar(50) DEFAULT NULL,
   lastmodified datetime DEFAULT NULL,
-  PRIMARY KEY (`usergroupid`)
+  PRIMARY KEY (`tenantid`)
 );
 
 
@@ -184,6 +205,7 @@ create table REPORTS
   createdat     varchar(50),
   lastvisittime varchar(50),
   lastmodified  datetime,
+  tenantid      varchar(50) NOT NULL,
   createtime    varchar(50),
   PRIMARY KEY (`reportid`)
 );
