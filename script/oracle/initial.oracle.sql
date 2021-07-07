@@ -15,6 +15,7 @@ create table CONSOLE_DASHBOARDS
   lastvisittime VARCHAR2(25),
   userid        VARCHAR2(60),
   createtime    VARCHAR2(25),
+  tenantid      varchar(50) NOT NULL,
   lastmodified  DATE
 )
 ;
@@ -44,8 +45,9 @@ create table CONSOLE_SPACES
   userid        VARCHAR2(60),
   topics        CLOB,
   createtime    VARCHAR2(50),
-  lastmodified  DATE,
-  last_modified DATE
+  tenantid      varchar(50) NOT NULL,
+  lastmodified  DATE
+
 )
 ;
 alter table CONSOLE_SPACES
@@ -73,7 +75,7 @@ create table CONSOLE_SPACE_FAVORITES
   connectedspaceids CLOB,
   dashboardids      CLOB,
   createtime        VARCHAR2(50),
-  last_modified     DATE,
+  tenantid      varchar(50) NOT NULL,
   lastmodified      DATE
 )
 ;
@@ -97,8 +99,8 @@ create table CONSOLE_SPACE_GRAPH
   topics        CLOB,
   subjects      CLOB,
   createtime    VARCHAR2(25),
+  tenantid      varchar(50) NOT NULL,
   lastmodified  DATE,
-  last_modified DATE
 )
 ;
 alter table CONSOLE_SPACE_GRAPH
@@ -122,6 +124,7 @@ create table CONSOLE_SPACE_LAST_SNAPSHOT
   favoritepin      VARCHAR2(5),
   userid           VARCHAR2(60) not null,
   createtime       VARCHAR2(50),
+  tenantid      varchar(50) NOT NULL,
   lastmodified     DATE
 )
 ;
@@ -144,7 +147,7 @@ create table CONSOLE_SPACE_SUBJECTS
   lastvisittime  DATE,
   createdat      VARCHAR2(50),
   lastmodified  DATE,
-  lastmodifytime DATE,
+  tenantid      varchar(50) NOT NULL,
   createtime     VARCHAR2(50)
 )
 ;
@@ -163,6 +166,7 @@ create table ENUMS
   parentenumid VARCHAR2(60),
   items        CLOB,
   createtime   VARCHAR2(50),
+  tenantid      varchar(50) NOT NULL,
   lastmodified DATE
 )
 ;
@@ -187,7 +191,7 @@ create table PIPELINES
   enabled       VARCHAR2(5),
   "on"          CLOB,
   createtime    VARCHAR2(25),
-  last_modified DATE,
+  tenantid      varchar(50) NOT NULL,
   lastmodified  DATE
 )
 ;
@@ -212,6 +216,7 @@ create table PIPELINE_GRAPH
   userid       VARCHAR2(60) not null,
   name         VARCHAR2(50),
   topics       CLOB,
+  tenantid      varchar(50) NOT NULL,
   lastmodified DATE,
   createtime   VARCHAR2(25)
 )
@@ -222,22 +227,7 @@ alter table PIPELINE_GRAPH
   add constraint PIPELINE_GRAPH_TOPICS_JSON
   check (topics IS JSON);
 
-prompt
-prompt Creating table PRESTO_SCHEMA
-prompt ============================
-prompt
-create table PRESTO_SCHEMA
-(
-  schema_id  VARCHAR2(60) not null,
-  table_name VARCHAR2(50),
-  fields     CLOB
-)
-;
-alter table PRESTO_SCHEMA
-  add constraint PRESTO_SCHEMA_PK primary key (SCHEMA_ID);
-alter table PRESTO_SCHEMA
-  add constraint PRESTO_SCHEMA_FIELDS_JSON
-  check (fields IS JSON);
+
 
 prompt
 prompt Creating table SPACES
@@ -251,7 +241,7 @@ create table SPACES
   name          VARCHAR2(50),
   description   VARCHAR2(50),
   createtime    VARCHAR2(50),
-  last_modified DATE,
+  tenantid      varchar(50) NOT NULL,
   lastmodified  DATE
 )
 ;
@@ -277,7 +267,7 @@ create table TOPICS
   description   VARCHAR2(50),
   factors       CLOB,
   createtime    VARCHAR2(50),
-  last_modified DATE,
+  tenantid      varchar(50) NOT NULL,
   lastmodified  DATE
 )
 ;
@@ -300,6 +290,7 @@ create table USERS
   is_active    VARCHAR2(5),
   role         VARCHAR2(45),
   createtime   VARCHAR2(50),
+  tenantid      varchar(50) NOT NULL,
   lastmodified DATE,
   groupids     CLOB
 )
@@ -321,6 +312,7 @@ create table USER_GROUPS
   description  VARCHAR2(50),
   userids      CLOB,
   spaceids     CLOB,
+  tenantid      varchar(50) NOT NULL,
   createtime   VARCHAR2(50),
   lastmodified DATE
 )
@@ -347,6 +339,7 @@ create table REPORTS
   chart         CLOB,
   createdat     VARCHAR2(50),
   lastvisittime VARCHAR2(50),
+  tenantid      varchar(50) NOT NULL,
   lastmodified  DATE,
   createtime    VARCHAR2(50)
 )
