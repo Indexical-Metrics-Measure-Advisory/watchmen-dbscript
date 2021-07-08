@@ -1,11 +1,4 @@
 
-set define off
-spool watchmen_oracle.log
-
-prompt
-prompt Creating table CONSOLE_DASHBOARDS
-prompt =================================
-prompt
 create table CONSOLE_DASHBOARDS
 (
   dashboardid   VARCHAR2(60) not null,
@@ -28,10 +21,7 @@ alter table CONSOLE_DASHBOARDS
   add constraint REPORTS_JSON
   check (reports IS JSON);
 
-prompt
-prompt Creating table CONSOLE_SPACES
-prompt =============================
-prompt
+
 create table CONSOLE_SPACES
 (
   spaceid       VARCHAR2(60) not null,
@@ -65,10 +55,7 @@ alter table CONSOLE_SPACES
   add constraint TOPICS
   check (topics IS JSON);
 
-prompt
-prompt Creating table CONSOLE_SPACE_FAVORITES
-prompt ======================================
-prompt
+
 create table CONSOLE_SPACE_FAVORITES
 (
   userid            VARCHAR2(60) not null,
@@ -88,10 +75,7 @@ alter table CONSOLE_SPACE_FAVORITES
   add constraint DASHBOARDIDS
   check (dashboardids IS JSON);
 
-prompt
-prompt Creating table CONSOLE_SPACE_GRAPH
-prompt ==================================
-prompt
+
 create table CONSOLE_SPACE_GRAPH
 (
   connectid     VARCHAR2(60) not null,
@@ -100,7 +84,7 @@ create table CONSOLE_SPACE_GRAPH
   subjects      CLOB,
   createtime    VARCHAR2(25),
   tenantid      varchar(50) NOT NULL,
-  lastmodified  DATE,
+  lastmodified  DATE
 )
 ;
 alter table CONSOLE_SPACE_GRAPH
@@ -112,10 +96,7 @@ alter table CONSOLE_SPACE_GRAPH
   add constraint TOPICS_JSON
   check (topics IS JSON);
 
-prompt
-prompt Creating table CONSOLE_SPACE_LAST_SNAPSHOT
-prompt ==========================================
-prompt
+
 create table CONSOLE_SPACE_LAST_SNAPSHOT
 (
   language         VARCHAR2(5),
@@ -131,10 +112,7 @@ create table CONSOLE_SPACE_LAST_SNAPSHOT
 alter table CONSOLE_SPACE_LAST_SNAPSHOT
   add constraint LAST_SNAPSHOT_PK primary key (USERID);
 
-prompt
-prompt Creating table CONSOLE_SPACE_SUBJECTS
-prompt =====================================
-prompt
+
 create table CONSOLE_SPACE_SUBJECTS
 (
   subjectid      VARCHAR2(60) not null,
@@ -154,10 +132,7 @@ create table CONSOLE_SPACE_SUBJECTS
 alter table CONSOLE_SPACE_SUBJECTS
   add constraint CONSOLE_SPACE_SUBJECTS_PK primary key (SUBJECTID);
 
-prompt
-prompt Creating table ENUMS
-prompt ====================
-prompt
+
 create table ENUMS
 (
   enumid       VARCHAR2(60) not null,
@@ -176,10 +151,7 @@ alter table ENUMS
   add constraint ITEMS_JSON
   check (ITEMS IS JSON);
 
-prompt
-prompt Creating table PIPELINES
-prompt ========================
-prompt
+
 create table PIPELINES
 (
   pipelineid    VARCHAR2(60) not null,
@@ -206,10 +178,7 @@ alter table PIPELINES
   add constraint PIPELINES_STAGES_JSON
   check (stages IS JSON);
 
-prompt
-prompt Creating table PIPELINE_GRAPH
-prompt =============================
-prompt
+
 create table PIPELINE_GRAPH
 (
   pipelinegraphid VARCHAR2(60) not null,
@@ -229,10 +198,7 @@ alter table PIPELINE_GRAPH
 
 
 
-prompt
-prompt Creating table SPACES
-prompt =====================
-prompt
+
 create table SPACES
 (
   spaceid       VARCHAR2(60) not null,
@@ -254,10 +220,7 @@ alter table SPACES
   add constraint TOPICIDS_JSON
   check (topicids IS JSON);
 
-prompt
-prompt Creating table TOPICS
-prompt =====================
-prompt
+
 create table TOPICS
 (
   topicid       VARCHAR2(60) not null,
@@ -277,10 +240,7 @@ alter table TOPICS
   add constraint FACTORS_JSON
   check (FACTORS IS JSON);
 
-prompt
-prompt Creating table USERS
-prompt ====================
-prompt
+
 create table USERS
 (
   userid       VARCHAR2(60) not null,
@@ -301,10 +261,7 @@ alter table USERS
   add constraint GROUPIDS_JSON
   check (groupids IS JSON);
 
-prompt
-prompt Creating table USER_GROUPS
-prompt ==========================
-prompt
+
 create table USER_GROUPS
 (
   usergroupid  VARCHAR2(60) not null,
@@ -346,7 +303,7 @@ create table REPORTS
 ;
 -- Create/Recreate primary, unique and foreign key constraints
 alter table REPORTS
-  add constraint REPORTS_PK primary key (REPORTID)
+  add constraint REPORTS_PK primary key (REPORTID);
 -- Create/Recreate check constraints
 alter table REPORTS
   add constraint REPORTS_CHART_JSON
@@ -362,4 +319,3 @@ alter table REPORTS
   check (rect IS JSON);
 
 
-spool off
