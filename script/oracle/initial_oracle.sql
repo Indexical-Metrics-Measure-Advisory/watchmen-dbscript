@@ -319,3 +319,23 @@ alter table REPORTS
   check (rect IS JSON);
 
 
+create table PATS
+(
+  patid        VARCHAR2(60) not null,
+  tokenid      VARCHAR2(50) not null,
+  userid       VARCHAR2(50) not null,
+  tenantid     VARCHAR2(50) not null,
+  note         VARCHAR2(50) not null,
+  expired      DATE,
+  permissions  CLOB,
+  lastmodified DATE,
+  createtime   VARCHAR2(50),
+  username     VARCHAR2(50) not null
+)
+;
+-- Create/Recreate primary, unique and foreign key constraints
+alter table PATS
+  add constraint PATS_PK primary key (PATID)
+  using index;
+
+

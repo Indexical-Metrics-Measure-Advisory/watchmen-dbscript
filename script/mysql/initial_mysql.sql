@@ -209,3 +209,18 @@ create table REPORTS
   createtime    varchar(50),
   PRIMARY KEY (`reportid`)
 );
+
+create table PATS
+(
+  patid        varchar(60) NOT NULL,
+  tokenid      varchar(50) NOT NULL,
+  userid       varchar(50) NOT NULL,
+  tenantid     varchar(50) NOT NULL,
+  note         varchar(50) NOT NULL,
+  expired      datetime,
+  permissions  json,
+  lastmodified datetime,
+  createtime   varchar(50),
+  username     varchar(50) NOT NULL,
+  PRIMARY KEY (`patid`)
+);
