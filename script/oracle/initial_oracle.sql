@@ -283,6 +283,16 @@ alter table USER_GROUPS
   add constraint USER_GROUPS_USERIDS_JSON
   check (userids IS JSON);
 
+create table TENANTS
+(
+  tenantid     VARCHAR2(60) not null,
+  name         VARCHAR2(50) not null,
+  createtime   VARCHAR2(50) DEFAULT NULL,
+  lastmodified date DEFAULT NULL
+)
+;
+alter table TENANTS
+  add constraint TENANTS_PK primary key (tenantid);
 
 -- Create table
 create table REPORTS

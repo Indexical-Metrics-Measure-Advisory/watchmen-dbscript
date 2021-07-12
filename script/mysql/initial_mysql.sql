@@ -149,7 +149,6 @@ CREATE TABLE TOPICS
   description   varchar(50) DEFAULT NULL,
   factors       json DEFAULT NULL,
   createtime    varchar(50) DEFAULT NULL,
---  last_modified datetime DEFAULT NULL,
   tenantid      varchar(50) NOT NULL,
   lastmodified  datetime DEFAULT NULL,
   PRIMARY KEY (`topicid`)
