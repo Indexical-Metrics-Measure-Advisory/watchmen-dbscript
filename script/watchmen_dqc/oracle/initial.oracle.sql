@@ -1,6 +1,6 @@
 create table MONITOR_RULES
 (
-  uid           VARCHAR2(60) not null,
+  ruleid           VARCHAR2(60) not null,
   code          VARCHAR2(50),
   grade         VARCHAR2(50),
   severity   VARCHAR2(50),
