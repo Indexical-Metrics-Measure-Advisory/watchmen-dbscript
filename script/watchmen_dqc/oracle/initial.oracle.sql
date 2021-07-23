@@ -10,6 +10,8 @@ create table MONITOR_RULES
   factorid      VARCHAR2(50),
   lastmodified  DATE,
   tenantid      VARCHAR2(50),
-  createtime    DATE,
-  PRIMARY KEY (`uid`)
-);
+  createtime    DATE
+)
+;
+alter table MONITOR_RULES
+  add constraint MONITOR_RULES_PK primary key (ruleid);

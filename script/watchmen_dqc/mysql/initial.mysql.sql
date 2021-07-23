@@ -11,5 +11,5 @@ create table MONITOR_RULES
   lastmodified  datetime,
   tenantid      varchar(50),
   createtime    datetime,
-  PRIMARY KEY (`uid`)
+  PRIMARY KEY (`ruleid`)
 );
