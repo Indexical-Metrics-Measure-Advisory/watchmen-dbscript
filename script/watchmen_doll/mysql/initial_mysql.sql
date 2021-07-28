@@ -25,6 +25,7 @@ CREATE TABLE CONSOLE_SPACES
   topics        json DEFAULT NULL,
   tenantid      varchar(50) NOT NULL,
   createtime    varchar(50) DEFAULT NULL,
+  istemplate    boolean   DEFAULT false,
   lastmodified  datetime DEFAULT NULL,
   PRIMARY KEY (`connectid`)
 );
