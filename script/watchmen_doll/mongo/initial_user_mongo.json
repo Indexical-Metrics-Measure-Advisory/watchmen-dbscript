@@ -1,0 +1,28 @@
+[{
+    "userId": "802229369383682048",
+    "name": "imma-admin",
+    "nickName": "",
+    "password": "$2b$12$v5yHhyCW1sxNjZT9NKiIZuQU3mSaoC6CZkjJCgm.CD2sReTrBaOxO",
+    "is_active": 1,
+    "role": "admin",
+    "groupIds": [""],
+    "tenantId": "1",
+    "createTime": "2021-07-31 18:28:51",
+    "lastModified": {
+        "$date": "2021-07-31T10:28:51.000Z"
+    }
+},
+{
+    "userId": "2",
+    "name": "imma-console",
+    "nickName": "",
+    "password": "$2b$12$zt6JK0SdYuYr2WSlL7v.iOLFpH67JEhzATMf.MmccEO2GJvrJMheW",
+    "is_active": 1,
+    "role": "user",
+    "groupIds": [""],
+    "tenantId": "1",
+    "createTime": "2021-07-31 18:28:51",
+    "lastModified": {
+        "$date": "2021-07-31T10:28:51.000Z"
+    }
+}]
