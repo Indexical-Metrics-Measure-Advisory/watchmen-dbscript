@@ -79,7 +79,6 @@ CREATE TABLE CONSOLE_SPACE_SUBJECTS
   dataset        json DEFAULT NULL,
   lastvisittime  datetime DEFAULT NULL,
   createdat      varchar(50) DEFAULT NULL,
---  last_modified  datetime DEFAULT NULL,
   lastmodified datetime DEFAULT NULL,
   tenantid      varchar(50) NOT NULL,
   createtime     varchar(50) DEFAULT NULL,
