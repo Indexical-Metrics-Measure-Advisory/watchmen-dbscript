@@ -34,7 +34,7 @@ create table CONSOLE_SPACES
   subjectids    CLOB,
   userid        VARCHAR2(60),
   topics        CLOB,
-  istemplate    BOOLEAN   DEFAULT false,
+  istemplate    VARCHAR2(5),
   createtime    VARCHAR2(50),
   tenantid      varchar(50) NOT NULL,
   lastmodified  DATE
