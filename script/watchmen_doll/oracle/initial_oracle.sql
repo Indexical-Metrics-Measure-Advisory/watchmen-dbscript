@@ -230,6 +230,7 @@ create table TOPICS
   type          VARCHAR2(10),
   description   VARCHAR2(50),
   factors       CLOB,
+  datasourceid  varchar(60) NOT NULL,
   createtime    VARCHAR2(50),
   tenantid      varchar(50) NOT NULL,
   lastmodified  DATE
@@ -347,6 +348,28 @@ create table PATS
 -- Create/Recreate primary, unique and foreign key constraints
 alter table PATS
   add constraint PATS_PK primary key (PATID)
+  using index;
+
+
+create table DATA_SOURCES
+(
+  datasourceid        varchar(60) NOT NULL,
+  dataSourceCode      varchar(50) NOT NULL,
+  dataSourceType       varchar(50) NOT NULL,
+  host     varchar(50) ,
+  port         varchar(50) ,
+  username         varchar(50) ,
+  password         varchar(50) ,
+  name         varchar(50) ,
+  url      varchar(50) ,
+  params    CLOB,
+  lastmodified DATE,
+  createtime   varchar(50),
+  tenantid     varchar(50) NOT NULL
+);
+
+alter table DATA_SOURCES
+  add constraint DATA_SOURCES_PK primary key (DATASOURCEID))
   using index;
 
 

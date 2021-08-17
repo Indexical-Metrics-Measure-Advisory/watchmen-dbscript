@@ -151,6 +151,7 @@ CREATE TABLE TOPICS
   factors       json DEFAULT NULL,
   createtime    varchar(50) DEFAULT NULL,
   tenantid      varchar(50) NOT NULL,
+  datasouceid    varchar(50) DEFAULT NULL,
   lastmodified  datetime DEFAULT NULL,
   PRIMARY KEY (`topicid`)
 );
@@ -224,3 +225,25 @@ create table PATS
   username     varchar(50) NOT NULL,
   PRIMARY KEY (`patid`)
 );
+
+
+create table DATA_SOURCES
+(
+  datasourceid        varchar(60) NOT NULL,
+  dataSourceCode      varchar(50) NOT NULL,
+  dataSourceType       varchar(50) NOT NULL,
+  host     varchar(50) DEFAULT NULL,
+  port         varchar(50) DEFAULT NULL,
+  username         varchar(50) DEFAULT NULL,
+  password         varchar(50) DEFAULT NULL,
+  name         varchar(50) DEFAULT NULL,
+  url      varchar(50) DEFAULT NULL,
+  params    json,
+  lastmodified datetime,
+  createtime   varchar(50),
+  tenantid     varchar(50) NOT NULL,
+  PRIMARY KEY (`datasourceid`)
+);
+
+
+
