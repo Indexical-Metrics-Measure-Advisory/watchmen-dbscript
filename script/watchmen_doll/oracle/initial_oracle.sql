@@ -230,7 +230,7 @@ create table TOPICS
   type          VARCHAR2(10),
   description   VARCHAR2(50),
   factors       CLOB,
-  datasourceid  varchar(60) NOT NULL,
+  datasourceid  varchar(60),
   createtime    VARCHAR2(50),
   tenantid      varchar(50) NOT NULL,
   lastmodified  DATE
