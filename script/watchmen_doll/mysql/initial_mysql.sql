@@ -150,7 +150,7 @@ CREATE TABLE TOPICS
   factors       json DEFAULT NULL,
   createtime    varchar(50) DEFAULT NULL,
   tenantid      varchar(50) NOT NULL,
-  datasouceid    varchar(50) DEFAULT NULL,
+  datasourceid    varchar(50) DEFAULT NULL,
   lastmodified  datetime DEFAULT NULL,
   PRIMARY KEY (`topicid`)
 );
