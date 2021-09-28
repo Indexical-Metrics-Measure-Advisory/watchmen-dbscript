@@ -244,5 +244,16 @@ create table DATA_SOURCES
   PRIMARY KEY (`datasourceid`)
 );
 
+create table EXTERNAL_WRITER
+(
+  writerid        varchar(50) NOT NULL,
+  writercode      varchar(50) NOT NULL,
+  type       varchar(50) NOT NULL,
+  pat     varchar(50) DEFAULT NULL,
+  tenantId         varchar(50) DEFAULT NULL,
+  url         varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`writerid`)
+);
+
 
 
