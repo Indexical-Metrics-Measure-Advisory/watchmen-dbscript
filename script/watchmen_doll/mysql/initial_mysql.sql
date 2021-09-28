@@ -252,6 +252,8 @@ create table EXTERNAL_WRITER
   pat     varchar(50) DEFAULT NULL,
   tenantId         varchar(50) DEFAULT NULL,
   url         varchar(50) DEFAULT NULL,
+  lastmodified datetime,
+  createtime   varchar(50),
   PRIMARY KEY (`writerid`)
 );
 
