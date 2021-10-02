@@ -373,3 +373,19 @@ alter table DATA_SOURCES
   using index;
 
 
+
+create table EXTERNAL_WRITER
+(
+  writerid        varchar(50) NOT NULL,
+  writercode      varchar(50) NOT NULL,
+  type       varchar(50) NOT NULL,
+  pat     varchar(50) DEFAULT NULL,
+  tenantId         varchar(50) ,
+  url         varchar(50) ,
+  lastmodified DATE,
+  createtime   varchar(50)
+);
+
+alter table EXTERNAL_WRITER
+  add constraint EXTERNAL_WRITER_PK primary key (WRITERID))
+  using index;
