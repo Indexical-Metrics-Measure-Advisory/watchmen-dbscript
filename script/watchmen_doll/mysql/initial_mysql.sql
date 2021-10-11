@@ -257,5 +257,16 @@ create table EXTERNAL_WRITER
   PRIMARY KEY (`writerid`)
 );
 
+create table KEY_STORE
+(
+  tenantId         varchar(50) NOT NULL,
+  keyToken         varchar(50) NOT NULL,
+  lastmodified datetime,
+  createtime   varchar(50),
+  PRIMARY KEY (`tenantId`)
+);
+
+
+
 
 
