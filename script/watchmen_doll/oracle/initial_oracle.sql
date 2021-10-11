@@ -392,7 +392,7 @@ alter table EXTERNAL_WRITER
 
 
 
-create table KEY_STORE
+create table KEY_STORES
 (
   tenantId         varchar(50) NOT NULL,
   keyToken         varchar(50) NOT NULL,
@@ -400,6 +400,6 @@ create table KEY_STORE
   createtime   varchar(50)
 );
 
-alter table KEY_STORE
+alter table KEY_STORES
   add constraint KEY_STORE_PK primary key (TENANTID))
   using index;

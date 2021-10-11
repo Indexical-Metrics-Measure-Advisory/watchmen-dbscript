@@ -257,7 +257,7 @@ create table EXTERNAL_WRITER
   PRIMARY KEY (`writerid`)
 );
 
-create table KEY_STORE
+create table KEY_STORES
 (
   tenantId         varchar(50) NOT NULL,
   keyToken         varchar(50) NOT NULL,
