@@ -260,7 +260,8 @@ create table EXTERNAL_WRITER
 create table KEY_STORES
 (
   tenantId         varchar(50) NOT NULL,
-  keyToken         varchar(50) NOT NULL,
+  keyType         varchar(50) NOT NULL,
+  params         json,
   lastmodified datetime,
   createtime   varchar(50),
   PRIMARY KEY (`tenantId`)
