@@ -98,6 +98,11 @@ CREATE TABLE ENUMS
   PRIMARY KEY (`enumid`)
 );
 
+
+
+
+
+
 CREATE TABLE PIPELINES
 (
   pipelineid    varchar(60) NOT NULL,

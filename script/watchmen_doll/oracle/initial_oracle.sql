@@ -152,6 +152,23 @@ alter table ENUMS
   add constraint ITEMS_JSON
   check (ITEMS IS JSON);
 
+-- CREATE TABLE ENUM_ITEMS
+-- (
+--   itemId       varchar(60) NOT NULL,
+--   code         varchar(50) NOT NULL,
+--   label    varchar(25) ,
+--   parentCode varchar(60)
+--   replaceCode  varchar(60) ,
+--   enumId       varchar(60) NOT NULL,
+--   createtime   varchar(50) 
+--   tenantid      varchar(50) NOT NULL,
+--   lastmodified DATE 
+-- );
+
+-- alter table ENUMITEMS
+--   add constraint ENUMITEMS_PK primary key (ITEMID);
+
+
 
 create table PIPELINES
 (
