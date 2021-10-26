@@ -7,7 +7,7 @@ create table CONSOLE_DASHBOARDS
   paragraphs    CLOB,
   lastvisittime VARCHAR2(25),
   userid        VARCHAR2(60),
-  createtime    VARCHAR2(25),
+  createtime    VARCHAR2(50),
   tenantid      varchar(50) NOT NULL,
   lastmodified  DATE
 )
@@ -83,7 +83,7 @@ create table CONSOLE_SPACE_GRAPH
   userid        VARCHAR2(60),
   topics        CLOB,
   subjects      CLOB,
-  createtime    VARCHAR2(25),
+  createtime    VARCHAR2(50),
   tenantid      varchar(50) NOT NULL,
   lastmodified  DATE
 )
@@ -180,7 +180,7 @@ create table PIPELINES
   conditional   VARCHAR2(5),
   enabled       VARCHAR2(5),
   "on"          CLOB,
-  createtime    VARCHAR2(25),
+  createtime    VARCHAR2(500),
   tenantid      varchar(50) NOT NULL,
   lastmodified  DATE
 )
@@ -205,7 +205,7 @@ create table PIPELINE_GRAPH
   topics       CLOB,
   tenantid      varchar(50) NOT NULL,
   lastmodified DATE,
-  createtime   VARCHAR2(25)
+  createtime   VARCHAR2(50)
 )
 ;
 alter table PIPELINE_GRAPH
