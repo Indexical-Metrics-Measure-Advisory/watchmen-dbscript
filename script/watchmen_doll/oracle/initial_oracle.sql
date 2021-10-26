@@ -24,9 +24,9 @@ alter table CONSOLE_DASHBOARDS
 
 create table CONSOLE_SPACES
 (
-  spaceid       VARCHAR2(60) not null,
+  connectid     VARCHAR2(60) not null,
   name          VARCHAR2(50),
-  connectid     VARCHAR2(60),
+  spaceid       VARCHAR2(60),
   type          VARCHAR2(10),
   lastvisittime DATE,
   subjects      CLOB,
@@ -224,6 +224,7 @@ create table SPACES
   groupids      CLOB,
   name          VARCHAR2(50),
   description   VARCHAR2(250),
+  filters       CLOB,
   createtime    VARCHAR2(50),
   tenantid      varchar(50) NOT NULL,
   lastmodified  DATE
@@ -320,6 +321,8 @@ create table REPORTS
   name          VARCHAR2(50),
   indicators    CLOB,
   dimensions    CLOB,
+  filters       CLOB,
+  funnels       CLOB,
   description   VARCHAR2(250),
   rect          CLOB,
   chart         CLOB,

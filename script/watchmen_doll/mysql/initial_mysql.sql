@@ -13,9 +13,9 @@ CREATE TABLE CONSOLE_DASHBOARDS (
 
 CREATE TABLE CONSOLE_SPACES
 (
+  connectid     varchar(60) NOT NULL,
   spaceid       varchar(60) NOT NULL,
   name          varchar(50) DEFAULT NULL,
-  connectid     varchar(60) NOT NULL,
   type          varchar(10) DEFAULT NULL,
   lastvisittime datetime DEFAULT NULL,
   subjects      json DEFAULT NULL,
@@ -139,6 +139,7 @@ CREATE TABLE SPACES
   groupids      json DEFAULT NULL,
   name          varchar(50) DEFAULT NULL,
   description   varchar(250) DEFAULT NULL,
+  filters       json DEFAULT NULL,
   createtime    varchar(50) DEFAULT NULL,
   lastmodified  datetime DEFAULT NULL,
   tenantid varchar(50) NOT NULL,
@@ -204,6 +205,8 @@ create table REPORTS
   name          varchar(50),
   indicators    json,
   dimensions    json,
+  funnels       json,
+  filters       json,
   description   varchar(250),
   rect          json,
   chart         json,
