@@ -113,7 +113,7 @@ CREATE TABLE PIPELINES
   conditional   varchar(5) DEFAULT NULL,
   enabled       varchar(5) DEFAULT NULL,
   `on`            json DEFAULT NULL,
-  createtime    varchar(25) DEFAULT NULL,
+  createtime    varchar(50) DEFAULT NULL,
 --  last_modified datetime DEFAULT NULL,
   lastmodified  datetime DEFAULT NULL,
   tenantid      varchar(50) NOT NULL,
@@ -127,7 +127,7 @@ CREATE TABLE PIPELINE_GRAPH
   name         varchar(50) not null,
   topics       json DEFAULT NULL,
   lastmodified datetime DEFAULT NULL,
-  createtime   varchar(25) DEFAULT NULL,
+  createtime   varchar(50) DEFAULT NULL,
   tenantid      varchar(50) NOT NULL,
   PRIMARY KEY (`pipelinegraphid`)
 );
