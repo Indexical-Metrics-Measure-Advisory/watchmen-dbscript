@@ -376,54 +376,54 @@ alter table PATS
 
 create table DATA_SOURCES
 (
-  datasourceid        varchar(60) NOT NULL,
-  dataSourceCode      varchar(50) NOT NULL,
-  dataSourceType       varchar(50) NOT NULL,
-  host     varchar(50) ,
-  port         varchar(50) ,
-  username         varchar(50) ,
-  password         varchar(50) ,
-  name         varchar(50) ,
-  url      varchar(50) ,
-  params    CLOB,
-  lastmodified DATE,
-  createtime   varchar(50),
-  tenantid     varchar(50) NOT NULL
+  datasourceid        VARCHAR2(60) NOT NULL,
+  dataSourceCode      VARCHAR2(50) NOT NULL,
+  dataSourceType      VARCHAR2(50) NOT NULL,
+  host                VARCHAR2(50) ,
+  port                VARCHAR2(50) ,
+  username            VARCHAR2(50) ,
+  password            VARCHAR2(50) ,
+  name                VARCHAR2(50) ,
+  url                 VARCHAR2(50) ,
+  params              CLOB,
+  lastmodified        DATE,
+  createtime          VARCHAR2(50),
+  tenantid            VARCHAR2(50) NOT NULL
 );
 
 alter table DATA_SOURCES
-  add constraint DATA_SOURCES_PK primary key (DATASOURCEID))
+  add constraint DATA_SOURCES_PK primary key (DATASOURCEID)
   using index;
 
 
 
 create table EXTERNAL_WRITER
 (
-  writerid        varchar(50) NOT NULL,
-  writercode      varchar(50) NOT NULL,
-  type       varchar(50) NOT NULL,
-  pat     varchar(50) DEFAULT NULL,
-  tenantId         varchar(50) ,
-  url         varchar(50) ,
-  lastmodified DATE,
-  createtime   varchar(50)
+  writerid        VARCHAR2(50) NOT NULL,
+  writercode      VARCHAR2(50) NOT NULL,
+  type            VARCHAR2(50) NOT NULL,
+  pat             VARCHAR2(50) DEFAULT NULL,
+  tenantId        VARCHAR2(50) ,
+  url             VARCHAR2(50) ,
+  lastmodified    DATE,
+  createtime      VARCHAR2(50)
 );
 
 alter table EXTERNAL_WRITER
-  add constraint EXTERNAL_WRITER_PK primary key (WRITERID))
+  add constraint EXTERNAL_WRITER_PK primary key (WRITERID)
   using index;
 
 
 
 create table KEY_STORES
 (
-  tenantId         varchar(50) NOT NULL,
-  keyType         varchar(50) NOT NULL,
-  params    CLOB,
-  lastmodified datetime,
-  createtime   varchar(50)
+  tenantId         VARCHAR2(50) NOT NULL,
+  keyType          VARCHAR2(50) NOT NULL,
+  params           CLOB,
+  lastmodified     DATE,
+  createtime       VARCHAR2(50)
 );
 
 alter table KEY_STORES
-  add constraint KEY_STORE_PK primary key (TENANTID))
+  add constraint KEY_STORE_PK primary key (TENANTID)
   using index;
