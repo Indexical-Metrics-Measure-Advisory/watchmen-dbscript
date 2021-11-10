@@ -215,6 +215,9 @@ create table REPORTS
   lastmodified  datetime,
   tenantid      varchar(50) NOT NULL,
   createtime    varchar(50),
+  simulating    boolean DEFAULT false,
+  simulateData  json,
+  simulateThumbnail  mediumtext,
   PRIMARY KEY (`reportid`)
 );
 

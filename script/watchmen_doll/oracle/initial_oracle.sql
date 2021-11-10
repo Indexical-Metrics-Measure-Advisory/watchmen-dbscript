@@ -331,6 +331,9 @@ create table REPORTS
   tenantid      varchar(50) NOT NULL,
   lastmodified  DATE,
   createtime    VARCHAR2(50)
+  simulating    BOOLEAN
+  simulateData  CLOB,
+  simulateThumbnail  CLOB,
 )
 ;
 -- Create/Recreate primary, unique and foreign key constraints
