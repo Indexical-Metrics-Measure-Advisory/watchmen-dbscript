@@ -1,4 +1,5 @@
-CREATE TABLE CONSOLE_DASHBOARDS (
+CREATE TABLE CONSOLE_DASHBOARDS
+(
   dashboardid varchar(60) NOT NULL,
   name varchar(50) DEFAULT NULL,
   reports json DEFAULT NULL,
@@ -97,11 +98,6 @@ CREATE TABLE ENUMS
   lastmodified datetime DEFAULT NULL,
   PRIMARY KEY (`enumid`)
 );
-
-
-
-
-
 
 CREATE TABLE PIPELINES
 (
