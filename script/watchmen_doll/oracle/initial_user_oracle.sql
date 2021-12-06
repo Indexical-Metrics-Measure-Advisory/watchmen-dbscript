@@ -9,3 +9,5 @@ values ('3', 'imma-super', null, '$2b$12$v5yHhyCW1sxNjZT9NKiIZuQU3mSaoC6CZkjJCgm
 insert into USERS (USERID, NAME, NICKNAME, PASSWORD, IS_ACTIVE, ROLE, CREATETIME, LASTMODIFIED, TENANTID)
 values ('2802229369383682048', 'imma-admin', null, '$2b$12$v5yHhyCW1sxNjZT9NKiIZuQU3mSaoC6CZkjJCgm.CD2sReTrBaOxO', '1', 'admin', null, sysdate, '1');
 
+insert into PATS (PATID, TOKENID, USERID, TENANTID,NOTE, EXPIRED ,PERMISSIONS,CREATETIME, LASTMODIFIED,USERNAME)
+values ('1', 'kUWBTfFL_rclOQ0r7_IRDA', "3", '1', 'super pat', null, null,null, sysdate, 'imma-super');

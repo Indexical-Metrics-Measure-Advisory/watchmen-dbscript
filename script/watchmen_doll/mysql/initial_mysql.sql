@@ -279,6 +279,23 @@ create table KEY_STORES
 );
 
 
+create table FACTOR_INDEX
+(
+  factorindexid   varchar(50) NOT NULL,
+  factorid         varchar(50) NOT NULL,
+  tenantid         varchar(50) NOT NULL,
+  topicid         varchar(50) NOT NULL,
+  name         varchar(60) NOT NULL,
+  label         varchar(60) ,
+  topicname         varchar(60) NOT NULL,
+  description         varchar(100),
+  type              varchar(30) NOT NULL,
+  lastmodified datetime,
+  createtime   varchar(50),
+  PRIMARY KEY (`factorindexid`)
+);
+
+
 
 
 
