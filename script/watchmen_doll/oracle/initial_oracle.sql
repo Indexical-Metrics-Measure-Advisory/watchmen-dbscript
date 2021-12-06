@@ -331,7 +331,7 @@ create table REPORTS
   tenantid      varchar(50) NOT NULL,
   lastmodified  DATE,
   createtime    VARCHAR2(50)
-  simulating    BOOLEAN
+  simulating    VARCHAR2(5) DEFAULT 'False',
   simulateData  CLOB,
   simulateThumbnail  CLOB,
 )
