@@ -292,6 +292,31 @@ create table FACTOR_INDEX
 );
 
 
+create table PIPELINE_INDEX
+(
+  pipelineindexid   varchar(50) NOT NULL,
+  factorid         varchar(50) NOT NULL,
+  topicid         varchar(50) NOT NULL,
+  pipelineid         varchar(50) NOT NULL,
+  stageid         varchar(50) NOT NULL,
+  unitid         varchar(50) NOT NULL,
+  actionid         varchar(50) NOT NULL,
+  mappingtofactorid         varchar(50) ,
+  mappingtotopicid         varchar(50) ,
+  sourcefromfactorid         varchar(50) ,
+  sourcefromtopicid         varchar(50),
+  stagename         varchar(60) ,
+  pipelinename         varchar(60) ,
+  unitname         varchar(60) ,
+  reftype              varchar(30) ,
+  lastmodified datetime,
+  tenantid         varchar(50) NOT NULL,
+  createtime   varchar(50),
+  PRIMARY KEY (`pipelineindexid`)
+);
+
+
+
 
 
 

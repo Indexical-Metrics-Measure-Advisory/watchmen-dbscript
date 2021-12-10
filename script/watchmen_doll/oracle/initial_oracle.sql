@@ -427,3 +427,51 @@ create table KEY_STORES
 alter table KEY_STORES
   add constraint KEY_STORE_PK primary key (TENANTID)
   using index;
+
+
+create table FACTOR_INDEX
+(
+  factorindexid   varchar(50) NOT NULL,
+  factorid         varchar(50) NOT NULL,
+  tenantid         varchar(50) NOT NULL,
+  topicid         varchar(50) NOT NULL,
+  name         varchar(60) NOT NULL,
+  label         varchar(60) ,
+  topicname         varchar(60) NOT NULL,
+  description         varchar(100),
+  type              varchar(30) NOT NULL,
+  lastmodified DATE,
+  createtime   varchar(50),
+);
+
+alter table FACTOR_INDEX
+  add constraint FACTOR_INDEX_PK primary key (FACTORINDEXID)
+  using index;
+
+
+
+create table PIPELINE_INDEX
+(
+  pipelineindexid   varchar(50) NOT NULL,
+  factorid         varchar(50) NOT NULL,
+  topicid         varchar(50) NOT NULL,
+  pipelineid         varchar(50) NOT NULL,
+  stageid         varchar(50) NOT NULL,
+  unitid         varchar(50) NOT NULL,
+  actionid         varchar(50) NOT NULL,
+  mappingtofactorid         varchar(50) ,
+  mappingtotopicid         varchar(50) ,
+  sourcefromfactorid         varchar(50) ,
+  sourcefromtopicid         varchar(50),
+  stagename         varchar(60) ,
+  pipelinename         varchar(60) ,
+  unitname         varchar(60) ,
+  reftype              varchar(30) ,
+  lastmodified DATE,
+  tenantid         varchar(50) NOT NULL,
+  createtime   varchar(50),
+);
+
+alter table PIPELINE_INDEX
+  add constraint PIPELINE_INDEX_PK primary key (PIPELINEINDEXID)
+  using index;
