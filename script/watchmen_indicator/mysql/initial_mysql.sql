@@ -25,8 +25,33 @@ create table INDICATORS
   factorid        varchar(60),
   valuebuckets         json,
   relevants           json,
+  category1        varchar(50),
+  category2        varchar(50),
+  category3       varchar(50),
+  description     varchar(1000),
   lastmodified  datetime,
   tenantid      varchar(50),
   createtime    varchar(60),
   PRIMARY KEY (`indicatorid`)
+);
+
+
+create table INSPECTIONS 
+(
+  inspectionid      varchar(60) not null,
+  indicatorid      varchar(60) not null,
+  name          varchar(50),
+  aggregatearithmetics  json,
+  measureon           varchar(60),
+  measureonfactorId     varchar(60),
+  measureonbucketId     varchar(60),
+  timerangemeasure        varchar(60),
+  timerangefactorid       varchar(60),
+  measureOnTimeFactorId         varchar(60),
+  measureOnTime        varchar(60),
+  timeRanges         json,
+  lastmodified  datetime,
+  tenantid      varchar(50),
+  createtime    varchar(60),
+  PRIMARY KEY (`inspectionid`)
 );
