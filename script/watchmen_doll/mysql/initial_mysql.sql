@@ -317,9 +317,9 @@ create table PIPELINE_INDEX
 
 CREATE TABLE SNOWFLAKE_WORKERID(
   ip VARCHAR(100) NOT NULL,
-  processid VARCHAR(40) NULL,
+  processid VARCHAR(40) NOT NULL,
   workerid INT NULL,
-  regdate DATE NULL,
+  regdate datetime NULL,
   PRIMARY KEY (`ip`, `processid`)
 );
 
