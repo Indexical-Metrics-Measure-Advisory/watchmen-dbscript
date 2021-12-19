@@ -319,7 +319,7 @@ CREATE TABLE SNOWFLAKE_WORKERID(
   ip VARCHAR(100) NOT NULL,
   processid VARCHAR(40) NOT NULL,
   workerid INT NULL,
-  regdate DATE NULL,
+  regdate DATETIME NULL,
   PRIMARY KEY (`ip`, `processid`)
 );
 
