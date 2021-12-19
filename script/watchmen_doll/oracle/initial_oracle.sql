@@ -479,7 +479,7 @@ alter table PIPELINE_INDEX
 
 CREATE TABLE SNOWFLAKE_WORKERID(
   ip VARCHAR2(100) NOT NULL,
-  processid VARCHAR2(40) NULL,
+  processid VARCHAR2(40) NOT NULL,
   workerid NUMBER(5) NULL,
   regdate DATE NULL
 );
