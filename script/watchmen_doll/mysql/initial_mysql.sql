@@ -315,7 +315,13 @@ create table PIPELINE_INDEX
   PRIMARY KEY (`pipelineindexid`)
 );
 
-
+CREATE TABLE SNOWFLAKE_WORKERID(
+  ip VARCHAR(100) NOT NULL,
+  processid VARCHAR(40) NULL,
+  workerid INT NULL,
+  regdate DATE NULL,
+  PRIMARY KEY (`ip`, `processid`)
+);
 
 
 

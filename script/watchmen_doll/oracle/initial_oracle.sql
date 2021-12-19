@@ -431,17 +431,17 @@ alter table KEY_STORES
 
 create table FACTOR_INDEX
 (
-  factorindexid   varchar(50) NOT NULL,
-  factorid         varchar(50) NOT NULL,
-  tenantid         varchar(50) NOT NULL,
-  topicid         varchar(50) NOT NULL,
-  name         varchar(60) NOT NULL,
-  label         varchar(60) ,
-  topicname         varchar(60) NOT NULL,
-  description         varchar(100),
-  type              varchar(30) NOT NULL,
+  factorindexid   VARCHAR2(50) NOT NULL,
+  factorid         VARCHAR2(50) NOT NULL,
+  tenantid         VARCHAR2(50) NOT NULL,
+  topicid         VARCHAR2(50) NOT NULL,
+  name         VARCHAR2(60) NOT NULL,
+  label         VARCHAR2(60) ,
+  topicname         VARCHAR2(60) NOT NULL,
+  description         VARCHAR2(100),
+  type              VARCHAR2(30) NOT NULL,
   lastmodified DATE,
-  createtime   varchar(50),
+  createtime   VARCHAR2(50)
 );
 
 alter table FACTOR_INDEX
@@ -452,26 +452,37 @@ alter table FACTOR_INDEX
 
 create table PIPELINE_INDEX
 (
-  pipelineindexid   varchar(50) NOT NULL,
-  factorid         varchar(50) NOT NULL,
-  topicid         varchar(50) NOT NULL,
-  pipelineid         varchar(50) NOT NULL,
-  stageid         varchar(50) NOT NULL,
-  unitid         varchar(50) NOT NULL,
-  actionid         varchar(50) NOT NULL,
-  mappingtofactorid         varchar(50) ,
-  mappingtotopicid         varchar(50) ,
-  sourcefromfactorid         varchar(50) ,
-  sourcefromtopicid         varchar(50),
-  stagename         varchar(60) ,
-  pipelinename         varchar(60) ,
-  unitname         varchar(60) ,
-  reftype              varchar(30) ,
+  pipelineindexid   VARCHAR2(50) NOT NULL,
+  factorid         VARCHAR2(50) NOT NULL,
+  topicid         VARCHAR2(50) NOT NULL,
+  pipelineid         VARCHAR2(50) NOT NULL,
+  stageid         VARCHAR2(50) NOT NULL,
+  unitid         VARCHAR2(50) NOT NULL,
+  actionid         VARCHAR2(50) NOT NULL,
+  mappingtofactorid         VARCHAR2(50) ,
+  mappingtotopicid         VARCHAR2(50) ,
+  sourcefromfactorid         VARCHAR2(50) ,
+  sourcefromtopicid         VARCHAR2(50),
+  stagename         VARCHAR2(60) ,
+  pipelinename         VARCHAR2(60) ,
+  unitname         VARCHAR2(60) ,
+  reftype              VARCHAR2(30) ,
   lastmodified DATE,
-  tenantid         varchar(50) NOT NULL,
-  createtime   varchar(50),
+  tenantid         VARCHAR2(50) NOT NULL,
+  createtime   VARCHAR2(50)
 );
 
 alter table PIPELINE_INDEX
   add constraint PIPELINE_INDEX_PK primary key (PIPELINEINDEXID)
   using index;
+
+
+CREATE TABLE SNOWFLAKE_WORKERID(
+  ip VARCHAR2(100) NOT NULL,
+  processid VARCHAR2(40) NULL,
+  workerid NUMBER(5) NULL,
+  regdate DATE NULL
+);
+
+alter table SNOWFLAKE_WORKERID
+  add constraint SNOWFLAKE_WORKERID_PK primary key (IP, PROCESSID)
