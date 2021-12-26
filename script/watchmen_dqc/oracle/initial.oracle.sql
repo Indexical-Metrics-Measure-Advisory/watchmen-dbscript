@@ -15,3 +15,21 @@ create table MONITOR_RULES
 ;
 alter table MONITOR_RULES
   add constraint MONITOR_RULES_PK primary key (ruleid);
+
+
+create table CATALOGS
+(
+  catalogid      varchar(60) not null,
+  name          varchar(50),
+  description    varchar(200),
+  topicids        CLOB,
+  tags         CLOB,
+  techownerid       varchar(50),
+  bizownerid      varchar(50),
+  lastmodified  DATE,
+  tenantid      varchar(50),
+  createtime    DATE,
+);
+
+alter table CATALOGS
+  add constraint CATALOGS_PK primary key (catalogid);
