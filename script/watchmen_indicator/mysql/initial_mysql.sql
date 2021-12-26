@@ -11,7 +11,7 @@ create table BUCKETS
   lastmodified  datetime,
   tenantid      varchar(50),
   createtime    datetime,
-  PRIMARY KEY (`ruleid`)
+  PRIMARY KEY (`bucketid`)
 );
 
 
@@ -54,4 +54,24 @@ create table INSPECTIONS
   tenantid      varchar(50),
   createtime    varchar(60),
   PRIMARY KEY (`inspectionid`)
+);
+
+
+
+
+create table NAVIGATIONS
+(
+  navigationid      varchar(60) not null,
+  name          varchar(50),
+  description           varchar(60),
+  timeRangeType     varchar(60),
+  timeRangeYear     varchar(60),
+  timeRangeMonth        varchar(60),
+  timerangefactorid       varchar(60),
+  compareWithPreviousTimeRange    boolean   DEFAULT false,
+  indicators         json,
+  lastmodified  datetime,
+  tenantid      varchar(50),
+  createtime    varchar(60),
+  PRIMARY KEY (`navigationid`)
 );
