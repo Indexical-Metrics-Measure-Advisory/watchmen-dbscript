@@ -10,7 +10,7 @@ create table MONITOR_RULES
   factorid      VARCHAR2(50),
   lastmodified  DATE,
   tenantid      VARCHAR2(50),
-  createtime    DATE
+  createtime     VARCHAR2(60),
 )
 ;
 alter table MONITOR_RULES
@@ -19,16 +19,16 @@ alter table MONITOR_RULES
 
 create table CATALOGS
 (
-  catalogid      varchar(60) not null,
-  name          varchar(50),
-  description    varchar(200),
+  catalogid      VARCHAR2(60) not null,
+  name          VARCHAR2(50),
+  description    VARCHAR2(200),
   topicids        CLOB,
   tags         CLOB,
-  techownerid       varchar(50),
-  bizownerid      varchar(50),
+  techownerid       VARCHAR2(50),
+  bizownerid      VARCHAR2(50),
   lastmodified  DATE,
-  tenantid      varchar(50),
-  createtime    DATE,
+  tenantid      VARCHAR2(50),
+  createtime     VARCHAR2(60)
 );
 
 alter table CATALOGS

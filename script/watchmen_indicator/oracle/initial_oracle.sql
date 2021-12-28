@@ -1,15 +1,15 @@
 reate table BUCKETS
 (
-  bucketid      varchar(60) not null,
-  name          varchar(50),
-  type         varchar(50),
-  description   varchar(200),
+  bucketid      VARCHAR2(60) not null,
+  name          VARCHAR2(50),
+  type         VARCHAR2(50),
+  description   VARCHAR2(200),
   segments         CLOB,
-  include       varchar(50),
-  measure       varchar(50),
-  enumId      varchar(50),
+  include       VARCHAR2(50),
+  measure       VARCHAR2(50),
+  enumId      VARCHAR2(50),
   lastmodified  DATE,
-  tenantid      varchar(50),
+  tenantid      VARCHAR2(50),
   createtime    DATE
 );
 
@@ -20,19 +20,19 @@ alter table BUCKETS
 
 create table INDICATORS
 (
-  indicatorid      varchar(60) not null,
-  name          varchar(50),
-  topicid         varchar(60),
-  factorid        varchar(60),
+  indicatorid      VARCHAR2(60) not null,
+  name          VARCHAR2(50),
+  topicid         VARCHAR2(60),
+  factorid        VARCHAR2(60),
   valuebuckets         CLOB,
   relevants           CLOB,
-  category1        varchar(50),
-  category2        varchar(50),
-  category3       varchar(50),
-  description     varchar(1000),
+  category1        VARCHAR2(50),
+  category2        VARCHAR2(50),
+  category3       VARCHAR2(50),
+  description     VARCHAR2(1000),
   lastmodified  DATE,
-  tenantid      varchar(50),
-  createtime    varchar(60)
+  tenantid      VARCHAR2(50),
+  createtime    VARCHAR2(60)
 );
 
 
@@ -42,21 +42,21 @@ alter table INDICATORS
 
 create table INSPECTIONS 
 (
-  inspectionid      varchar(60) not null,
-  indicatorid      varchar(60) not null,
-  name          varchar(50),
-  aggregatearithmetics  json,
-  measureon           varchar(60),
-  measureonfactorId     varchar(60),
-  measureonbucketId     varchar(60),
-  timerangemeasure        varchar(60),
-  timerangefactorid       varchar(60),
-  measureOnTimeFactorId         varchar(60),
-  measureOnTime        varchar(60),
+  inspectionid      VARCHAR2(60) not null,
+  indicatorid      VARCHAR2(60) not null,
+  name          VARCHAR2(50),
+  aggregatearithmetics  CLOB,
+  measureon           VARCHAR2(60),
+  measureonfactorId     VARCHAR2(60),
+  measureonbucketId     VARCHAR2(60),
+  timerangemeasure        VARCHAR2(60),
+  timerangefactorid       VARCHAR2(60),
+  measureOnTimeFactorId         VARCHAR2(60),
+  measureOnTime        VARCHAR2(60),
   timeRanges         CLOB,
   lastmodified  DATE,
-  tenantid      varchar(50),
-  createtime    varchar(60)
+  tenantid      VARCHAR2(50),
+  createtime    VARCHAR2(60)
 );
 
 alter table INSPECTIONS
@@ -65,18 +65,18 @@ alter table INSPECTIONS
 
 create table NAVIGATIONS
 (
-  navigationid      varchar(60) not null,
-  name          varchar(50),
-  description           varchar(60),
-  timeRangeType     varchar(60),
-  timeRangeYear     varchar(60),
-  timeRangeMonth        varchar(60),
-  timerangefactorid       varchar(60),
+  navigationid      VARCHAR2(60) not null,
+  name          VARCHAR2(50),
+  description           VARCHAR2(60),
+  timeRangeType     VARCHAR2(60),
+  timeRangeYear     VARCHAR2(60),
+  timeRangeMonth        VARCHAR2(60),
+  timerangefactorid       VARCHAR2(60),
   compareWithPreviousTimeRange    boolean   DEFAULT false,
   indicators         CLOB,
   lastmodified  Date,
-  tenantid      varchar(50),
-  createtime    varchar(60)
+  tenantid      VARCHAR2(50),
+  createtime    VARCHAR2(60)
 );
 
 alter table NAVIGATIONS

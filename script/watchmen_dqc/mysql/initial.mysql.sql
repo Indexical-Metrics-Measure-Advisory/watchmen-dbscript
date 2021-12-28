@@ -10,7 +10,7 @@ create table MONITOR_RULES
   factorid      varchar(50),
   lastmodified  datetime,
   tenantid      varchar(50),
-  createtime    datetime,
+  createtime     varchar(60),
   PRIMARY KEY (`ruleid`)
 );
 
@@ -26,6 +26,6 @@ create table CATALOGS
   bizownerid      varchar(50),
   lastmodified  datetime,
   tenantid      varchar(50),
-  createtime    datetime,
+  createtime      varchar(60),
   PRIMARY KEY (`catalogid`)
 );
