@@ -20,7 +20,7 @@ create table CATALOGS
   catalogid      varchar(60) not null,
   name          varchar(50),
   description    varchar(200),
-  topicids        json
+  topicids        json,
   tags         json,
   techownerid       varchar(50),
   bizownerid      varchar(50),
