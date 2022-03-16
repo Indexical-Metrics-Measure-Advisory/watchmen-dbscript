@@ -333,7 +333,7 @@ create table REPORTS
   createtime    VARCHAR2(50)
   simulating    VARCHAR2(5) DEFAULT 'False',
   simulateData  CLOB,
-  simulateThumbnail  CLOB,
+  simulateThumbnail  CLOB
 )
 ;
 -- Create/Recreate primary, unique and foreign key constraints
@@ -485,4 +485,4 @@ CREATE TABLE SNOWFLAKE_WORKERID(
 );
 
 alter table SNOWFLAKE_WORKERID
-  add constraint SNOWFLAKE_WORKERID_PK primary key (IP, PROCESSID)
+  add constraint SNOWFLAKE_WORKERID_PK primary key (IP, PROCESSID);
