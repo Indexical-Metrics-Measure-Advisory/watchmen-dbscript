@@ -72,7 +72,7 @@ create table NAVIGATIONS
   timeRangeYear     VARCHAR2(60),
   timeRangeMonth        VARCHAR2(60),
   timerangefactorid       VARCHAR2(60),
-  compareWithPreviousTimeRange    boolean   DEFAULT false,
+  compareWithPreviousTimeRange    NUMBER(1)   DEFAULT 0,
   indicators         CLOB,
   lastmodified  Date,
   tenantid      VARCHAR2(50),
