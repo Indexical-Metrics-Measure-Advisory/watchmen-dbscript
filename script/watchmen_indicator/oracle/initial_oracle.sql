@@ -1,4 +1,4 @@
-reate table BUCKETS
+create table BUCKETS
 (
   bucketid      VARCHAR2(60) not null,
   name          VARCHAR2(50),
